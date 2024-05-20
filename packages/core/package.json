@@ -6,6 +6,9 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
+  "bin": {
+    "ws-cli": "bin/index.js"
+  },
   "directories": {
     "lib": "lib"
   },
@@ -17,5 +20,6 @@
   },
   "scripts": {
     "test": "node ./__tests__/core.test.js"
-  }
+  },
+  "gitHead": "4ffd831db94ce4f280f23b7b8b0cca001a29e41d"
 }
