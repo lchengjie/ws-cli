@@ -1,6 +1,6 @@
 {
   "name": "@ws-cli/utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ws-cli utils",
   "author": "Charlie LI <lchengjie@foxmail.com>",
   "homepage": "",
@@ -19,5 +19,5 @@
   "scripts": {
     "test": "node ./__tests__/utils.test.js"
   },
-  "gitHead": "e15145c4b081b1b3a299b88256805bc6da8f6f2c"
+  "gitHead": "ecf4d07a07127faee90e280263c72d79b073ca78"
 }
