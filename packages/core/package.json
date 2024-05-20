@@ -1,0 +1,21 @@
+{
+  "name": "@ws-cli/core",
+  "version": "1.0.0",
+  "description": "ws-cli core",
+  "author": "Charlie LI <lchengjie@foxmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com/"
+  },
+  "scripts": {
+    "test": "node ./__tests__/core.test.js"
+  }
+}
