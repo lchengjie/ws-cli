@@ -1,7 +1,14 @@
-.vscode
-.idea
-.env
+logs/
+prod-logs/
+npm-debug.log
+coverage/
+.idea/
+run/
 .DS_Store
+*.swp
+
+.vscode
+.env
 
 node_modules/
 
