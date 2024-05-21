@@ -1,0 +1,37 @@
+{
+  "name": "@ws-cli/package",
+  "version": "1.0.8",
+  "description": "ws-cli package",
+  "author": "Charlie LI <lchengjie@foxmail.com>",
+  "homepage": "https://github.com/lchengjie/ws-cli#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lchengjie/ws-cli.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/@ws-cli/package.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/lchengjie/ws-cli/issues"
+  },
+  "dependencies": {
+    "@ws-cli/format-path": "file:../../utils/format-path",
+    "@ws-cli/get-npm-info": "file:../../utils/get-npm-info",
+    "@ws-cli/utils": "file:../../utils/utils",
+    "npminstall": "^7.12.0",
+    "path-exists": "^4.0.0",
+    "pkg-dir": "^5.0.0"
+  }
+}

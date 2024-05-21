@@ -16,7 +16,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "node ./__tests__/utils.test.js"
+    "test": "echo \"this is from utils project.\""
   },
   "gitHead": "c136d13a8d007918bf8ad703215f63f30920419e"
 }

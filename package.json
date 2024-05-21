@@ -2,21 +2,17 @@
   "name": "ws-cli",
   "version": "1.0.4",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"this is from root project.\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@ws-cli/core": "^1.0.0"
-  },
   "devDependencies": {
     "lerna": "^8.1.3"
   },
   "workspaces": [
-    "packages/core",
-    "packages/utils"
+    "core/cli",
+    "utils/utils"
   ]
 }

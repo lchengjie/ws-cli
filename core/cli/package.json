@@ -1,0 +1,41 @@
+{
+  "name": "@ws-cli/core",
+  "version": "1.0.8",
+  "description": "ws-cli core",
+  "author": "Charlie LI <lchengjie@foxmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "type": "commonjs",
+  "bin": {
+    "ws-cli": "bin/index.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"this is from core project.\""
+  },
+  "gitHead": "c136d13a8d007918bf8ad703215f63f30920419e",
+  "dependencies": {
+    "@ws-cli/exec": "file:../exec",
+    "@ws-cli/get-npm-info": "file:../../utils/get-npm-info",
+    "@ws-cli/init": "file:../../commands/init",
+    "@ws-cli/log": "file:../../utils/log",
+    "colors": "^1.4.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "import-local": "^3.1.0",
+    "npmlog": "^7.0.1",
+    "path-exists": "^4.0.0",
+    "root-check": "^1.0.0",
+    "semver": "^7.6.2",
+    "user-home": "^3.0.0"
+  }
+}
