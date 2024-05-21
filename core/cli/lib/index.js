@@ -136,9 +136,8 @@ function checkEnv() {
     dotenv.config({
       path: dotenvPath
     })
-  } else {
-    createDefaultConfig()
   }
+  createDefaultConfig()
   log.verbose('环境变量：', process.env.CLI_HOME_PATH)
 }
 
