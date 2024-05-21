@@ -1,0 +1,16 @@
+79 error Error: Command failed with exit code 1: git add -- utils/get-npm-info/package.json utils/get-npm-info/package-lock.json utils/log/package.json utils/log/package-lock.json commands/init/package.json utils/format-path/package.json utils/utils/package.json utils/utils/package-lock.json models/package/package.json models/package/package-lock.json core/exec/package.json core/exec/package-lock.json core/cli/package.json core/cli/package-lock.json lerna.json package-lock.json
+79 error The following paths are ignored by one of your .gitignore files:
+79 error core/cli/package-lock.json
+79 error core/exec/package-lock.json
+79 error models/package/package-lock.json
+79 error utils/get-npm-info/package-lock.json
+79 error utils/log/package-lock.json
+79 error utils/utils/package-lock.json
+79 error hint: Use -f if you really want to add them.
+79 error hint: Turn this message off by running
+79 error hint: "git config advice.addIgnoredFile false"
+79 error     at makeError (/Users/charlie.chengjie.li/Projects/TPM/ws/ws-cli/node_modules/execa/lib/error.js:59:11)
+79 error     at handlePromise (/Users/charlie.chengjie.li/Projects/TPM/ws/ws-cli/node_modules/execa/index.js:114:26)
+79 error     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+79 error     at async VersionCommand.updatePackageVersions (/Users/charlie.chengjie.li/Projects/TPM/ws/ws-cli/node_modules/lerna/dist/index.js:8491:11)
+79 error     at async Promise.all (index 0)
