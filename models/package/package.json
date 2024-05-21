@@ -30,6 +30,7 @@
     "@ws-cli/format-path": "file:../../utils/format-path",
     "@ws-cli/get-npm-info": "file:../../utils/get-npm-info",
     "@ws-cli/utils": "file:../../utils/utils",
+    "fs-extra": "^11.2.0",
     "npminstall": "^7.12.0",
     "path-exists": "^4.0.0",
     "pkg-dir": "^5.0.0"

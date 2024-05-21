@@ -29,8 +29,10 @@ async function exec() {
     pkg = new Package({ targetPath, storeDir, packageName, packageVersion })
     if (await pkg.exists()) {
       // 更新Package
+      // log.warn('cli', 'hhereeeeeee1')
       await pkg.update()
     } else {
+      // log.warn('cli', 'hhereeeeeee2')
       // 安装Package
       await pkg.install()
     }
