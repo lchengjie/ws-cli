@@ -66,8 +66,9 @@ async function exec() {
         // 这是一种实现方式，需要监听error和exit两个事件
         , stdio: 'inherit'
       })
-      child.stdout.on('data', (chunk) => {})
-      child.stderr.on('data', (chunk) => {})
+      // log.warn('child: ', child)
+      // child.stdout.on('data', (chunk) => {})
+      // child.stderr.on('data', (chunk) => {})
 
     } catch (error) {
       log.error(error.message)

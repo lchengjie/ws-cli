@@ -18,5 +18,8 @@
   "scripts": {
     "test": "echo \"this is from utils project.\""
   },
-  "gitHead": "c136d13a8d007918bf8ad703215f63f30920419e"
+  "gitHead": "c136d13a8d007918bf8ad703215f63f30920419e",
+  "dependencies": {
+    "cli-spinner": "^0.2.10"
+  }
 }

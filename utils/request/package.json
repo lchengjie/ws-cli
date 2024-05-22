@@ -1,7 +1,7 @@
 {
-  "name": "@ws-cli/init",
-  "version": "1.0.10",
-  "description": "> TODO: description",
+  "name": "@ws-cli/request",
+  "version": "1.0.11",
+  "description": "ws-cli request",
   "author": "Charlie LI <lchengjie@foxmail.com>",
   "homepage": "https://github.com/lchengjie/ws-cli#readme",
   "license": "ISC",
@@ -21,20 +21,12 @@
     "url": "git+https://github.com/lchengjie/ws-cli.git"
   },
   "scripts": {
-    "test": "node ./__tests__/@ws-cli/init.test.js"
+    "test": "node ./__tests__/@ws-cli/request.test.js"
   },
   "bugs": {
     "url": "https://github.com/lchengjie/ws-cli/issues"
   },
   "dependencies": {
-    "@ws-cli/command": "file:../../models/command",
-    "@ws-cli/log": "file:../../utils/log",
-    "@ws-cli/package": "file:../../models/package",
-    "@ws-cli/request": "file:../../utils/request",
-    "@ws-cli/utils": "file:../../utils/utils",
-    "fs-extra": "^11.2.0",
-    "inquirer": "^8.2.6",
-    "semver": "^7.6.2",
-    "user-home": "^3.0.0"
+    "axios": "^1.7.2"
   }
 }

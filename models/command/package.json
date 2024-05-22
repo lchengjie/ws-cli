@@ -29,6 +29,8 @@
   "dependencies": {
     "@ws-cli/log": "file:../../utils/log",
     "colors": "^1.4.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^8.2.6",
     "semver": "^7.6.2"
   }
 }

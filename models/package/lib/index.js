@@ -77,8 +77,10 @@ class Package {
     await this.prepare()
     // 获取最新的NPM模块版本号
     const latestPackageVersion = await getNpmLatestVersion(this.packageName)
+    console.log("🚀 ~ Package ~ update ~ latestPackageVersion:", latestPackageVersion)
     // 查询最新版本号对应的路径是否存在
     const latestFilePath = this.getSpecificCacheFilePath(latestPackageVersion)
+    console.log("🚀 ~ Package ~ update ~ latestFilePath:", latestFilePath)
     // 如果不存在，则直接安装最新版本
     if (!pathExists(latestFilePath)) {
       await npminstall({
