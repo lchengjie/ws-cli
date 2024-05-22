@@ -25,5 +25,9 @@
   },
   "bugs": {
     "url": "https://github.com/lchengjie/ws-cli/issues"
+  },
+  "dependencies": {
+    "@ws-cli/command": "file:../../models/command",
+    "@ws-cli/log": "file:../../utils/log"
   }
 }
