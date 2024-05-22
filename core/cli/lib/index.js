@@ -11,7 +11,6 @@ module.exports = core;
 const semver = require('semver');
 const colors = require('colors/safe');
 const userHome = require('user-home');
-const minimist = require('minimist')
 const dotenv = require('dotenv')
 const path = require('path')
 const rootCheck = require('root-check')
@@ -42,7 +41,7 @@ async function core() {
 
 function registerCommand() {
   // console.log('program: ', program)
-  const init = require('@ws-cli/init')
+  // const init = require('@ws-cli/init')
   program
     .name(Object.keys(pkg.bin)[0])
     .usage('<command> [options]')
@@ -90,7 +89,7 @@ async function prepare() {
   // 检查输入参数、检查环境变量
   // 检查是否最新版本
   checkPkgVersion()
-  checkNodeVersion()
+  // checkNodeVersion()
   checkRoot()
   checkUserHome()
   // checkInputArgs()
@@ -102,17 +101,17 @@ function checkPkgVersion() {
   log.notice('cli', `当前ws-cli版本 v${pkg.version}`)
 }
 
-function checkNodeVersion() {
-  // 获取当前版本号
-  // console.log(process.version)
-  const currentVersion = process.version
-  log.notice('cli',`当前Node.js版本 ${currentVersion}`)
-  // 获取最低要求版本号比对
-  const lowestVersion = constant.LOWEST_NODE_VERSION
-  if (!semver.gte(currentVersion, lowestVersion)) {
-    throw new Error(colors.red(`ws-cli需要安装 v${lowestVersion} 以上版本的 Node.js`))
-  }
-}
+// function checkNodeVersion() {
+//   // 获取当前版本号
+//   // console.log(process.version)
+//   const currentVersion = process.version
+//   log.notice('cli',`当前Node.js版本 ${currentVersion}`)
+//   // 获取最低要求版本号比对
+//   const lowestVersion = constant.LOWEST_NODE_VERSION
+//   if (!semver.gte(currentVersion, lowestVersion)) {
+//     throw new Error(colors.red(`ws-cli需要安装 v${lowestVersion} 以上版本的 Node.js`))
+//   }
+// }
 
 function checkRoot() {
   // console.log(process.geteuid())

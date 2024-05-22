@@ -1,4 +1,5 @@
 'use strict';
+const cp = require('child_process')
 const path = require('path')
 const Package = require('@ws-cli/package')
 const log = require('@ws-cli/log')
@@ -41,11 +42,56 @@ async function exec() {
   }
   const rootFile = pkg.getRootFilePath()
   if (rootFile) {
-    require(rootFile).apply(null, arguments)
+    try {
+      // require(rootFile).apply(null, arguments)
+      // 使用call，并将第二个参数变成数组，则被调用放只需要接收一个参数
+      // require(rootFile).call(null, Array.from(arguments))
+      const args = Array.from(arguments)
+      const cmd = args[args.length - 1]
+      // 瘦身cmd
+      const o = Object.create(null)
+      Object.keys(cmd).forEach(key => {
+        if (cmd.hasOwnProperty(key) && !key.startsWith('_') && key !== 'parent') {
+          o[key] = cmd[key]
+        }
+      })
+      args[args.length - 1] = o
+      // console.log('000000', args)
+      // require(rootFile).call(null, JSON.stringify(args))
+
+      const code = `require('${rootFile}').call(null, ${JSON.stringify(args)})`
+      // console.log('000000', code)
+      const child = spawn('node', ['-e', code], {
+        cwd: process.cwd()
+        // 这是一种实现方式，需要监听error和exit两个事件
+        , stdio: 'inherit'
+      })
+      child.stdout.on('data', (chunk) => {})
+      child.stderr.on('data', (chunk) => {})
+
+    } catch (error) {
+      log.error(error.message)
+      if (process.env.LOG_LEVEL ==='verbose') {
+        console.log(error)
+      }
+    }
   }
 
   // console.log('exec getRootFilePath: ', pkg.getRootFilePath())
   // console.log('target path: 222', process.env.CLI_TARGET_PATH)
+}
+
+// 兼容win32下运行
+function spawn(command, args, options) {
+  const win32 = process.platform === 'win32'
+
+  const cmd = win32 ? 'cmd' : command
+  const cmdArgs = win32 ? ['/c'].concat(command, args) : args
+  // win32下执行命令方式为
+  // cp.spawn('cmd', ['/c', 'node', '-e', code], {})
+  // linux下执行命令为
+  // cp.spawn('node', ['-e', code], {})
+  return cp.spawn(cmd, cmdArgs, options || {})
 }
 
 module.exports = exec;

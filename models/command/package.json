@@ -1,0 +1,34 @@
+{
+  "name": "@ws-cli/command",
+  "version": "1.0.11",
+  "description": "ws-cli command",
+  "author": "Charlie LI <lchengjie@foxmail.com>",
+  "homepage": "https://github.com/lchengjie/ws-cli#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lchengjie/ws-cli.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/@ws-cli/command.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/lchengjie/ws-cli/issues"
+  },
+  "dependencies": {
+    "@ws-cli/log": "file:../../utils/log",
+    "colors": "^1.4.0",
+    "semver": "^7.6.2"
+  }
+}
