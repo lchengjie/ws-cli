@@ -47,7 +47,7 @@ class Package {
     // return path.resolve(this.storeDir, `${this.cacheFilePathPrefix}@${this.packageVersion}@${this.packageName}`)
   }
   getSpecificCacheFilePath(version) {
-    return path.resolve(this.storeDir, '.store', `${this.cacheFilePathPrefix}@${version}`)
+    return path.resolve(this.storeDir, '.store', `${this.cacheFilePathPrefix}@${version}`, 'node_modules', this.packageName)
   }
   // 判断当前Package是否存在
   async exists() {
@@ -92,6 +92,8 @@ class Package {
           version: latestPackageVersion
         }]
       })
+      this.packageVersion = latestPackageVersion
+    } else {
       this.packageVersion = latestPackageVersion
     }
   }

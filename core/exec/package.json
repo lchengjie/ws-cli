@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@ws-cli/log": "file:../../utils/log",
-    "@ws-cli/package": "file:../../models/package"
+    "@ws-cli/package": "file:../../models/package",
+    "@ws-cli/utils": "file:../../utils/utils"
   }
 }

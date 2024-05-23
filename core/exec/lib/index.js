@@ -1,8 +1,9 @@
 'use strict';
-const cp = require('child_process')
+// const cp = require('child_process')
 const path = require('path')
 const Package = require('@ws-cli/package')
 const log = require('@ws-cli/log')
+const { execute } = require('@ws-cli/utils')
 
 const SETTINGS = {
   init: '@ws-cli/init',
@@ -61,7 +62,7 @@ async function exec() {
 
       const code = `require('${rootFile}').call(null, ${JSON.stringify(args)})`
       // console.log('000000', code)
-      const child = spawn('node', ['-e', code], {
+      const child = execute('node', ['-e', code], {
         cwd: process.cwd()
         // 这是一种实现方式，需要监听error和exit两个事件
         , stdio: 'inherit'
@@ -82,17 +83,17 @@ async function exec() {
   // console.log('target path: 222', process.env.CLI_TARGET_PATH)
 }
 
-// 兼容win32下运行
-function spawn(command, args, options) {
-  const win32 = process.platform === 'win32'
+// // 兼容win32下运行
+// function spawn(command, args, options) {
+//   const win32 = process.platform === 'win32'
 
-  const cmd = win32 ? 'cmd' : command
-  const cmdArgs = win32 ? ['/c'].concat(command, args) : args
-  // win32下执行命令方式为
-  // cp.spawn('cmd', ['/c', 'node', '-e', code], {})
-  // linux下执行命令为
-  // cp.spawn('node', ['-e', code], {})
-  return cp.spawn(cmd, cmdArgs, options || {})
-}
+//   const cmd = win32 ? 'cmd' : command
+//   const cmdArgs = win32 ? ['/c'].concat(command, args) : args
+//   // win32下执行命令方式为
+//   // cp.spawn('cmd', ['/c', 'node', '-e', code], {})
+//   // linux下执行命令为
+//   // cp.spawn('node', ['-e', code], {})
+//   return cp.spawn(cmd, cmdArgs, options || {})
+// }
 
 module.exports = exec;

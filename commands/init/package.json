@@ -32,8 +32,11 @@
     "@ws-cli/package": "file:../../models/package",
     "@ws-cli/request": "file:../../utils/request",
     "@ws-cli/utils": "file:../../utils/utils",
+    "ejs": "^3.1.10",
     "fs-extra": "^11.2.0",
+    "glob": "^10.3.16",
     "inquirer": "^8.2.6",
+    "kebab-case": "^1.0.2",
     "semver": "^7.6.2",
     "user-home": "^3.0.0"
   }
